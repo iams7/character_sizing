@@ -16,7 +16,6 @@ export function FontWidthTable({
   fontFamily,
   fontWeight
 }: FontWidthTableProps) {
-  const [isGrouped, setIsGrouped] = useState(true);
   const [sortConfig, setSortConfig] = useState<SortConfig>({
     field: 'width',
     direction: 'desc'
@@ -33,15 +32,16 @@ export function FontWidthTable({
   };
 
   const processData = (data: FontMeasurement[]) => {
-    let processed = [...data];
-    if (isGrouped) {
-      processed = groupMeasurementsByWidth(processed);
-    }
+    const processed = groupMeasurementsByWidth([...data]);
     return sortMeasurements(processed, sortConfig);
   };
 
   return (
     <div>
+      <div className="mb-4 flex items-center gap-4">
+        {/* Removed the button for toggling grouping */}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {[
           { title: 'Uppercase Letters', data: uppercase },
@@ -80,7 +80,7 @@ export function FontWidthTable({
                       key={`${char}-${fontSize}`}
                       className={clsx(
                         'hover:bg-gray-50',
-                        isGrouped && group !== undefined && GROUP_COLORS[group % GROUP_COLORS.length]
+                        group !== undefined && GROUP_COLORS[group % GROUP_COLORS.length]
                       )}
                     >
                       <td className="p-4 border-b border-gray-200 font-mono">{char}</td>
