@@ -8,7 +8,6 @@ export function measureCharacterWidth(
 ): Promise<number> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log('fontSize', fontSize, 'fontFamily', fontFamily, 'fontWeight', fontWeight);
       const canvas = document.createElement('canvas');
       const context = canvas.getContext('2d');
       
@@ -17,11 +16,7 @@ export function measureCharacterWidth(
       }
 
       context.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
-      console.log('context', context);
-      console.log('context.font', context.font);
-      
       const width = context.measureText(char).width;
-      console.log('Measured width for character:', char, 'is', width);
       resolve(width);
     }, 0);
   });

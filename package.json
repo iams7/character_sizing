@@ -9,15 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@fontsource/roboto": "^5.0.8",
-    "@fontsource/source-code-pro": "^5.0.8",
-    "@fontsource/open-sans": "^5.0.8",
     "@fontsource/fira-code": "^5.0.8",
     "@fontsource/jetbrains-mono": "^5.0.8",
+    "@fontsource/open-sans": "^5.0.8",
+    "@fontsource/roboto": "^5.1.0",
+    "@fontsource/roboto-mono": "^5.1.0",
+    "@fontsource/source-code-pro": "^5.0.8",
     "@fontsource/ubuntu-mono": "^5.0.8",
-    "clsx": "^2.0.0"
+    "clsx": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

@@ -1,18 +1,23 @@
 import { FontOption, FontVariant } from '../types/fonts';
+
 interface FontSelectProps {
   fonts: FontOption[];
   selectedFont: FontOption;
   selectedVariant: FontVariant;
+  selectedFontSize: number;
   onFontChange: (font: FontOption) => void;
   onVariantChange: (variant: FontVariant) => void;
+  onFontSizeChange: (size: number) => void;
 }
 
 export function FontSelect({
   fonts,
   selectedFont,
   selectedVariant,
+  selectedFontSize,
   onFontChange,
-  onVariantChange
+  onVariantChange,
+  onFontSizeChange
 }: FontSelectProps) {
   return (
     <div className="flex gap-4">
@@ -56,6 +61,21 @@ export function FontSelect({
             </option>
           ))}
         </select>
+      </div>
+
+      <div>
+        <label htmlFor="fontSize" className="block text-sm font-medium text-gray-700 mb-2">
+          Font Size (px):
+        </label>
+        <input
+          type="number"
+          id="fontSize"
+          value={selectedFontSize}
+          onChange={(e) => onFontSizeChange(Number(e.target.value))}
+          className="w-24 px-3 py-2 border border-gray-300 rounded-md"
+          min="7"
+          max="72"
+        />
       </div>
     </div>
   );

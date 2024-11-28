@@ -52,4 +52,30 @@ export const fontOptions: FontOption[] = [
     ],
     isMonospace: true
   },
+  {
+    name: 'Roboto',
+    family: '"Roboto"',
+    variants: [
+      { name: 'Thin', weight: 100 },
+      { name: 'Light', weight: 300 },
+      { name: 'Regular', weight: 400 },
+      { name: 'Medium', weight: 500 },
+      { name: 'Bold', weight: 700 },
+      { name: 'Black', weight: 900 }
+    ],
+    isMonospace: false
+  },
+  {
+    name: 'Roboto Mono',
+    family: '"Roboto Mono"',
+    variants: [
+      { name: 'Thin', weight: 100 },
+      { name: 'Light', weight: 300 },
+      { name: 'Regular', weight: 400 },
+      { name: 'Medium', weight: 500 },
+      { name: 'Bold', weight: 700 },
+      { name: 'Black', weight: 900 }
+    ],
+    isMonospace: true
+  },
 ];
