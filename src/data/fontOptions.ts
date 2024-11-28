@@ -2,6 +2,15 @@ import { FontOption } from '../types/fonts';
 
 export const fontOptions: FontOption[] = [
   {
+    name: 'Helvetica',
+    family: 'Helvetica',
+    variants: [
+      { name: 'Regular', weight: 400 },
+      { name: 'Bold', weight: 700 }
+    ],
+    isMonospace: false
+  },
+  {
     name: 'Source Code Pro',
     family: '"Source Code Pro"',
     variants: [
@@ -43,13 +52,4 @@ export const fontOptions: FontOption[] = [
     ],
     isMonospace: true
   },
-  {
-    name: 'Helvetica',
-    family: 'Helvetica',
-    variants: [
-      { name: 'Regular', weight: 400 },
-      { name: 'Bold', weight: 700 }
-    ],
-    isMonospace: false
-  }
 ];

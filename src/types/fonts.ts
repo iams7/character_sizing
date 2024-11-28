@@ -25,3 +25,5 @@ export interface SortConfig {
   field: SortField;
   direction: SortDirection;
 }
+
+export type TabType = 'default' | 'custom';

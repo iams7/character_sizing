@@ -1,4 +1,3 @@
-import React from 'react';
 import { SortDirection } from '../types/fonts';
 
 interface SortButtonProps {

@@ -1,6 +1,4 @@
-import React from 'react';
 import { FontOption, FontVariant } from '../types/fonts';
-
 interface FontSelectProps {
   fonts: FontOption[];
   selectedFont: FontOption;

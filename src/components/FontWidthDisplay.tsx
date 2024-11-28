@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllAlphabetWidths } from '../utils/fontMeasurement';
 import { FontSelect } from './FontSelect';
 import { FontWidthTable } from './FontWidthTable';
@@ -26,6 +26,8 @@ export function FontWidthDisplay() {
   const [fontSize, setFontSize] = useState(16);
   const [selectedFont, setSelectedFont] = useState<FontOption>(fontOptions[0]);
   const [selectedVariant, setSelectedVariant] = useState<FontVariant>(fontOptions[0].variants[0]);
+
+  console.log(selectedFont)
 
   useEffect(() => {
     const measurements = getAllAlphabetWidths(

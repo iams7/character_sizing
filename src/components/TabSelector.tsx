@@ -1,4 +1,3 @@
-import React from 'react';
 import { TabType } from '../types/fonts';
 import clsx from 'clsx';
 

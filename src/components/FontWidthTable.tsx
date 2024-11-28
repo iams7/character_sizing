@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FontMeasurement, SortConfig, SortField } from '../types/fonts';
 import { groupMeasurementsByWidth, GROUP_COLORS } from '../utils/grouping';
 import { sortMeasurements } from '../utils/sorting';
@@ -33,12 +33,15 @@ export function FontWidthTable({
   };
 
   const processData = (data: FontMeasurement[]) => {
+    console.log('process data', data)
     let processed = [...data];
     if (isGrouped) {
       processed = groupMeasurementsByWidth(processed);
     }
     return sortMeasurements(processed, sortConfig);
   };
+
+  console.log('fontFamily', fontFamily, 'fontWeight', fontWeight)
 
   return (
     <div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FontWidthDisplay } from './components/FontWidthDisplay';
 
 function App() {
