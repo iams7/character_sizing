@@ -33,7 +33,6 @@ export function FontWidthTable({
   };
 
   const processData = (data: FontMeasurement[]) => {
-    console.log('process data', data)
     let processed = [...data];
     if (isGrouped) {
       processed = groupMeasurementsByWidth(processed);
@@ -41,24 +40,8 @@ export function FontWidthTable({
     return sortMeasurements(processed, sortConfig);
   };
 
-  console.log('fontFamily', fontFamily, 'fontWeight', fontWeight)
-
   return (
     <div>
-      <div className="mb-4 flex items-center gap-4">
-        <button
-          onClick={() => setIsGrouped(!isGrouped)}
-          className={clsx(
-            'px-4 py-2 rounded-md text-sm font-medium transition-colors',
-            isGrouped
-              ? 'bg-blue-100 text-blue-700 hover:bg-blue-200'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          )}
-        >
-          {isGrouped ? 'Ungroup Characters' : 'Group by Width'}
-        </button>
-      </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {[
           { title: 'Uppercase Letters', data: uppercase },

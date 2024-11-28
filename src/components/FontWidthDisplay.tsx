@@ -23,19 +23,21 @@ import '@fontsource/ubuntu-mono/700.css';
 
 export function FontWidthDisplay() {
   const [measurements, setMeasurements] = useState<FontMeasurement[]>([]);
-  const [fontSize, setFontSize] = useState(16);
+  const [fontSize, setFontSize] = useState(9);
   const [selectedFont, setSelectedFont] = useState<FontOption>(fontOptions[0]);
   const [selectedVariant, setSelectedVariant] = useState<FontVariant>(fontOptions[0].variants[0]);
 
-  console.log(selectedFont)
-
   useEffect(() => {
-    const measurements = getAllAlphabetWidths(
-      fontSize,
-      selectedFont.family,
-      selectedVariant.weight
-    ).map(m => ({ ...m, fontSize }));
-    setMeasurements(measurements);
+    const fetchMeasurements = async () => {
+      const measurements = await getAllAlphabetWidths(
+        fontSize,
+        selectedFont.family,
+        selectedVariant.weight.toString()
+      );
+      setMeasurements(measurements.map(m => ({ ...m, fontSize })));
+    };
+
+    fetchMeasurements();
   }, [fontSize, selectedFont, selectedVariant]);
 
   return (
